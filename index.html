@@ -661,7 +661,14 @@ stampSet("st-food",[
     "iPhone 錢包加 Suica，或準備 IC 卡",
     "入住前填好房東的「線上入住卡」（住宿名單＋兩人護照照片）並送出",
     "10/6 查收入住說明，確認 KeyCafe 領鑰匙的地點",
-    "帶護照（免稅用）、折疊傘"];
+    "帶護照（免稅用）、折疊傘",
+    "亞航網路報到（現在就能做）：<a href=\"https://www.airasia.com/check-in/zh/tw\" target=\"_blank\" rel=\"noopener\">airasia.com/check-in</a>",
+    "華航設定「預約自動報到」（現在就能設）：<a href=\"https://airportservice.china-airlines.com/autoCheckin/preCheckin_home.aspx?country=tw&locale=zh\" target=\"_blank\" rel=\"noopener\">華航預約自動報到</a>",
+    "Day 1 牛腸鍋：Hotpepper 訂楽天地 西中洲店 18:00 保底，出發前再刷 Tabelog 看前田屋有沒有空位",
+    "截圖存手機：ecbo 預約畫面（要登入才看得到）、VJW 兩個 QR Code、各家訂位確認信",
+    "換一點日圓現金：屋台、川端ぜんざい、部分小店只收現金",
+    "唐吉訶德電子折價券先存在手機（免稅 10%＋最多再折 7%）",
+    "Day 2 前一晚看天氣，決定走方案 A（太宰府）或 B（櫛田神社）"];
   const ul=document.getElementById("todo"); let st={}; try{st=JSON.parse(store("fk-todo")||"{}")}catch(e){}
   const draw=()=>ul.innerHTML=items.map((t,i)=>`<li class="${st[i]?"done":""}" data-i="${i}"><div class="box">${st[i]?"✓":""}</div><span>${t}</span></li>`).join("");
   ul.addEventListener("click",e=>{const li=e.target.closest("li"); if(!li) return; st[li.dataset.i]=!st[li.dataset.i]; store("fk-todo",JSON.stringify(st)); draw();});
