@@ -216,10 +216,6 @@ footer{font-size:12px;color:var(--sub);margin:22px 0 10px}
         <div style="margin-top:8px;font-size:16px;background:color-mix(in srgb,var(--d2) 10%,transparent);border-radius:10px;padding:8px 10px">🗣️ 「TableCheckで予約しています。予約番号は WXKV7Z です。」</div>
         <div style="margin-top:6px;font-size:13px;color:var(--sub)">📞 050-3137-1010（按 2）・遲到請先打電話・到店付 36,300 円</div>
       </div>
-      <div class="rsv" style="background:var(--card);border:2px dashed #c9bba8;border-radius:14px;padding:12px 16px;margin-bottom:12px;color:var(--sub)">
-        <div style="font-size:13px;font-weight:700">⏳ 待預約・10/10（六）午餐</div>
-        <div style="font-size:18px;font-weight:700;color:var(--ink)">人形町今半 JR博多シティ店　11:00・2名</div>
-      </div>
       <div class="rsv" style="background:var(--card);border:2px solid var(--d3);border-radius:14px;padding:14px 16px;margin-bottom:12px">
         <div style="font-size:13px;color:var(--d3);font-weight:700">✅ 已預約・10/10（六）寄行李</div>
         <div style="font-size:22px;font-weight:700;margin:4px 0">TKPサンライフホテル（ecbo cloak）</div>
@@ -230,6 +226,18 @@ footer{font-size:12px;color:var(--sub);margin:22px 0 10px}
         </table>
         <div style="margin-top:8px;font-size:16px;background:color-mix(in srgb,var(--d3) 10%,transparent);border-radius:10px;padding:8px 10px">🗣️ 「ecbo cloakで荷物預かりを予約しています。」</div>
         <div style="margin-top:6px;font-size:13px;color:var(--sub)">⚠️ 要給櫃台看的是 <b>ecbo 的預約畫面</b>（登入 ecbo 才看得到，建議先截圖）・晚到 1 小時內直接去就好・當天不能改或取消</div>
+      </div>
+      <div class="rsv" style="background:var(--card);border:2px solid var(--d1);border-radius:14px;padding:14px 16px;margin-bottom:12px">
+        <div style="font-size:13px;color:var(--d1);font-weight:700">✅ 已預約・10/10（六）午餐</div>
+        <div style="font-size:22px;font-weight:700;margin:4px 0">人形町今半 JR博多シティ店</div>
+        <table style="width:100%;font-size:17px;border-collapse:collapse;line-height:1.7">
+          <tr><td style="color:var(--sub);width:6.5em">日時</td><td><b>2026年10月10日（土）11:00</b></td></tr>
+          <tr><td style="color:var(--sub)">人数</td><td><b>2名</b></td></tr>
+          <tr><td style="color:var(--sub)">コース</td><td><b>Lunch sukiyaki course 80g［High Quality］× 2</b></td></tr>
+          <tr><td style="color:var(--sub)">予約番号</td><td><b style="font-size:22px;letter-spacing:2px">QSS7AT</b>（TableCheck）</td></tr>
+        </table>
+        <div style="margin-top:8px;font-size:16px;background:color-mix(in srgb,var(--d1) 10%,transparent);border-radius:10px;padding:8px 10px">🗣️ 「TableCheckで予約しています。予約番号は QSS7AT です。」</div>
+        <div style="margin-top:6px;font-size:13px;color:var(--sub)">📞 092-409-6600・JR博多シティ 9F・遲到 15 分鐘沒聯絡視同取消・當天取消收全額</div>
       </div>
     </div>
     <div class="sec">
@@ -427,9 +435,9 @@ const DAYS = [
      tags:[["c","寄行李"],["ok","✅ 已訂"]], facts:["⏰ 飯店櫃台 24 小時","💴 包包 500＋行李箱 800＝1,300 円","📍 博多駅東 1-12-3，筑紫口走路 1 分鐘"],
      notes:["退房後住處<b>不能寄放行李</b>（房源寫明），所以帶來博多站","<b>✅ 已訂好（ecbo cloak）</b>：10/10 寄 10:00、取 16:30，包包 1＋行李箱 1，1,300 円","到飯店大廳櫃台，<b>出示 ecbo 的預約畫面</b>（「須知」分頁的預約憑證有日文說明）","晚到 1 小時內直接去就好；寄存當天不能改或取消","ecbo 評價 5.0（57 則），網友說「是飯店所以時間沒限制，服務很快」","行李箱上疊包包算 2 件","早餐在便利商店簡單吃，留胃給 11:00 的壽喜燒"], from:AIRBNB_Q},
     {mv:["walk","走路 約 5–7 分鐘","空手穿過車站 → AMU Plaza 9F"]},
-    {t:"11:00", g:"hakatasta", q:"人形町今半 JR博多シティ店", name:"午餐：人形町今半（A5 黑毛和牛壽喜燒）", img:"suki", sample:"示意圖",
-     tags:[["c","壽喜燒"],["warn","要先訂位"]], facts:["⭐ Tabelog 3.67（福岡壽喜燒並列第一）","⏰ 11:00–16:00、17:00–22:00","📍 博多站 AMU Plaza 9F"],
-     notes:["1895 年東京創業的百年壽喜燒老店，<b>店員在桌邊幫你煮</b>，用黑毛和牛","午餐套餐每人：80g 肩肉 6,710 円／<b>80g 上等肉 9,130 円（推薦）</b>／80g 特上 12,760 円，另加 12% 服務費","寄完行李直接上樓，不用移動","備案：すき焼き山翔（Google 4.8）網路訂滿，想吃可打 +81-92-281-1029 問候補","🚃 <b>備案：飯後上屋頂</b>——JR博多城頂樓「つばめの杜ひろば」免費，10:00–22:00，有鐵道神社和看列車的觀景台，週六還有迷你小火車"]},
+    {t:"11:00", g:"hakatasta", q:"人形町今半 JR博多シティ店", name:"午餐：人形町今半（黑毛和牛壽喜燒）", img:"suki", sample:"示意圖",
+     tags:[["c","壽喜燒"],["ok","✅ 已訂"]], facts:["⭐ Tabelog 3.67（福岡壽喜燒並列第一）","⏰ 11:00–16:00、17:00–22:00","📍 博多站 AMU Plaza 9F"],
+     notes:["1895 年東京創業的百年壽喜燒老店，<b>店員在桌邊幫你煮</b>，用黑毛和牛","<b>✅ 已訂好：10/10（六）11:00</b>，Lunch sukiyaki course 80g［High Quality］× 2，預約 ID <b>QSS7AT</b>","套餐：三樣小菜、生魚片、壽喜燒、白飯、甜點","💴 9,130 × 2＋12% 服務費 ≈ 20,450 円（約 NT$4,190）；沒在 Requests 寫現場付的話，吃完<b>直接扣預約綁的卡</b>","⚠️ 10/9 前取消免費；當天取消或沒到收全額；遲到 15 分鐘沒聯絡視同取消（電話 092-409-6600）","🎫 給店員看：點「<b>須知</b>」分頁的<b>預約憑證</b>","🚃 <b>備案：飯後上屋頂</b>——JR博多城頂樓「つばめの杜ひろば」免費，10:00–22:00，有鐵道神社和看列車的觀景台，週六還有迷你小火車"]},
     {mv:["transit","地鐵 5 分鐘","博多 → 天神"]},
     {t:"12:30", g:"cardlab", q:"カードラボ 福岡天神店", name:"カードラボ 福岡天神店", img:"cardpile", sample:"示意圖",
      tags:[["c","卡牌店 ③"]], facts:["⏰ 週六 10:00–20:00（平日 11:00 開）","📍 天神 2-8-22 JMFビル天神西通り01 2F"], notes:["綜合卡牌店，寶可夢單卡、補充包都有","營業時間和地址已用官網確認"], approx:true},
@@ -551,13 +559,12 @@ stampSet("st-card",[
 stampSet("st-food",[
   ["🥩","和牛燒肉","Day 2"],["🏮","中洲屋台","Day 1"],["🍡","梅枝餅","Day 2"],
   ["🛒","唐吉軻德","Day 1"],["⚡","寶可夢中心","Day 1"],["🍲","牛腸鍋","Day 1"],
-  ["🍲","A5 壽喜燒","Day 3"],["🥞","大阪燒","Day 3"],["🍜","豚骨拉麵","Day 2"]],"fk-food","bar-food");
+  ["🍲","和牛壽喜燒","Day 3"],["🥞","大阪燒","Day 3"],["🍜","豚骨拉麵","Day 2"]],"fk-food","bar-food");
 
 /* ---------- todo ---------- */
 (function(){
   const items=["亞航去程有沒有含託運行李；亞航和華航是分開的票，兩段都要各自辦報到",
     "亞航去程沒有免費機上餐：出發前在 AirAsia App 預購餐點，或 10/8 中午先在桃園機場吃飽",
-    "TableCheck 訂 10/10 11:00 人形町今半（博多站 AMU Plaza 9F）",
     "兩人各自填 Visit Japan Web（入境＋海關），最晚抵達前 6 小時，截圖兩個 QR Code",
     "買日本 eSIM 並在台灣先安裝好（落地再開啟），或開電信漫遊",
     "iPhone 錢包加 Suica，或準備 IC 卡",
