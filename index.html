@@ -220,10 +220,16 @@ footer{font-size:12px;color:var(--sub);margin:22px 0 10px}
         <div style="font-size:13px;font-weight:700">⏳ 待預約・10/10（六）午餐</div>
         <div style="font-size:18px;font-weight:700;color:var(--ink)">人形町今半 JR博多シティ店　11:00・2名</div>
       </div>
-      <div class="rsv" style="background:var(--card);border:2px dashed #c9bba8;border-radius:14px;padding:12px 16px;color:var(--sub)">
-        <div style="font-size:13px;font-weight:700">⏳ 待預約・10/10（六）寄行李</div>
-        <div style="font-size:18px;font-weight:700;color:var(--ink)">TKPサンライフホテル（ecbo cloak）　10:00–16:30</div>
-        <div style="font-size:13px">當天出示 ecbo 確認信裡的 QR Code</div>
+      <div class="rsv" style="background:var(--card);border:2px solid var(--d3);border-radius:14px;padding:14px 16px;margin-bottom:12px">
+        <div style="font-size:13px;color:var(--d3);font-weight:700">✅ 已預約・10/10（六）寄行李</div>
+        <div style="font-size:22px;font-weight:700;margin:4px 0">TKPサンライフホテル（ecbo cloak）</div>
+        <table style="width:100%;font-size:17px;border-collapse:collapse;line-height:1.7">
+          <tr><td style="color:var(--sub);width:6.5em">預け入れ</td><td><b>2026年10月10日（土）10:00</b></td></tr>
+          <tr><td style="color:var(--sub)">受け取り</td><td><b>同日 16:30</b></td></tr>
+          <tr><td style="color:var(--sub)">荷物</td><td><b>バッグ × 1、スーツケース × 1</b>（¥1,300）</td></tr>
+        </table>
+        <div style="margin-top:8px;font-size:16px;background:color-mix(in srgb,var(--d3) 10%,transparent);border-radius:10px;padding:8px 10px">🗣️ 「ecbo cloakで荷物預かりを予約しています。」</div>
+        <div style="margin-top:6px;font-size:13px;color:var(--sub)">⚠️ 要給櫃台看的是 <b>ecbo 的預約畫面</b>（登入 ecbo 才看得到，建議先截圖）・晚到 1 小時內直接去就好・當天不能改或取消</div>
       </div>
     </div>
     <div class="sec">
@@ -418,8 +424,8 @@ const DAYS = [
    start:["taxi","計程車 約 5 分鐘","<b>9:45 左右退房出門</b>（10:00 前要退房）→ 跟司機說「<b>博多駅 筑紫口</b>」"],
    stops:[
     {t:"10:15", g:"tkp", q:"TKPサンライフホテル 博多駅東1-12-3", name:"🧳 寄行李：TKP サンライフホテル（筑紫口）", img:"hakata", sample:"示意圖",
-     tags:[["c","寄行李"],["warn","要先在 ecbo 預約"]], facts:["⏰ 飯店櫃台 24 小時","💴 包包 500＋行李箱 800＝1,300 円","📍 博多駅東 1-12-3，筑紫口走路 1 分鐘"],
-     notes:["退房後住處<b>不能寄放行李</b>（房源寫明），所以帶來博多站","用 <a href=\"https://cloak.ecbo.io/ja/spaces/7abcac96-4e12-4d82-8114-6b91313c9dbf\" target=\"_blank\" rel=\"noopener\">👉 ecbo cloak 預約</a>：10/10 寄 10:00、取 16:00，包包 1＋行李箱 1；<b>10/9 前取消才免費</b>","到飯店大廳櫃台說「ecbo の予約です」，出示 QR Code","ecbo 評價 5.0（57 則），網友說「是飯店所以時間沒限制，服務很快」","行李箱上疊包包算 2 件","早餐在便利商店簡單吃，留胃給 11:00 的壽喜燒"], from:AIRBNB_Q},
+     tags:[["c","寄行李"],["ok","✅ 已訂"]], facts:["⏰ 飯店櫃台 24 小時","💴 包包 500＋行李箱 800＝1,300 円","📍 博多駅東 1-12-3，筑紫口走路 1 分鐘"],
+     notes:["退房後住處<b>不能寄放行李</b>（房源寫明），所以帶來博多站","<b>✅ 已訂好（ecbo cloak）</b>：10/10 寄 10:00、取 16:30，包包 1＋行李箱 1，1,300 円","到飯店大廳櫃台，<b>出示 ecbo 的預約畫面</b>（「須知」分頁的預約憑證有日文說明）","晚到 1 小時內直接去就好；寄存當天不能改或取消","ecbo 評價 5.0（57 則），網友說「是飯店所以時間沒限制，服務很快」","行李箱上疊包包算 2 件","早餐在便利商店簡單吃，留胃給 11:00 的壽喜燒"], from:AIRBNB_Q},
     {mv:["walk","走路 約 5–7 分鐘","空手穿過車站 → AMU Plaza 9F"]},
     {t:"11:00", g:"hakatasta", q:"人形町今半 JR博多シティ店", name:"午餐：人形町今半（A5 黑毛和牛壽喜燒）", img:"suki", sample:"示意圖",
      tags:[["c","壽喜燒"],["warn","要先訂位"]], facts:["⭐ Tabelog 3.67（福岡壽喜燒並列第一）","⏰ 11:00–16:00、17:00–22:00","📍 博多站 AMU Plaza 9F"],
@@ -552,7 +558,6 @@ stampSet("st-food",[
   const items=["亞航去程有沒有含託運行李；亞航和華航是分開的票，兩段都要各自辦報到",
     "亞航去程沒有免費機上餐：出發前在 AirAsia App 預購餐點，或 10/8 中午先在桃園機場吃飽",
     "TableCheck 訂 10/10 11:00 人形町今半（博多站 AMU Plaza 9F）",
-    "ecbo cloak 預約 TKP サンライフホテル：10/10 寄 10:00、取 16:00，包包 1＋行李箱 1（1,300 円；10/9 前取消才免費）",
     "兩人各自填 Visit Japan Web（入境＋海關），最晚抵達前 6 小時，截圖兩個 QR Code",
     "買日本 eSIM 並在台灣先安裝好（落地再開啟），或開電信漫遊",
     "iPhone 錢包加 Suica，或準備 IC 卡",
