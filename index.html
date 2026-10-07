@@ -90,6 +90,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .ch b{display:block;font-size:16px}.ch span{font-size:12px;color:var(--sub)}
 .cr{font-size:14px;margin-top:5px;line-height:1.5}.cr i{font-style:normal;display:inline-block;min-width:2.6em;margin-right:6px;font-size:12px;color:var(--gold);font-weight:700}
 .addr li{margin:4px 0;user-select:all;-webkit-user-select:all}
+.gmlink{display:inline-block;margin:2px 0;padding:3px 10px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:500}
 .tag.ok{background:color-mix(in srgb,var(--d2) 16%,transparent);color:var(--d2)}
 .facts{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:var(--sub);margin-bottom:6px}
 .scard ul{margin:4px 0 0;padding-left:18px;font-size:15px}
@@ -612,7 +613,8 @@ function renderDay(D){
     if(s.mv){ ps.forEach(p=>st[p].mode=s.mv[0]);
       const nx = D.stops.slice(i+1).find(x=>!x.mv && vis(D,x,s.plan||P[0]));
       const srch = s.mv[3] || (nx && nx.q);
-      const add = (s.mv[0]!=="taxi" && srch) ? `；📍 Google Maps 搜尋：<b>${srch}</b>` : "";
+      const org = st[s.plan||P[0]].prev || s.from || AIRBNB_Q;
+      const add = (s.mv[0]!=="taxi" && srch) ? `；<a class="gmlink" href="${dir(org,srch,MODE[s.mv[0]][1])}" target="_blank" rel="noopener">🧭 點我開 Google Maps ${s.mv[0]==="walk"?"走路":"大眾運輸"}導航</a>（目的地：${srch}）` : "";
       h += `<div class="move${cls}"><span class="ic">${MODE[s.mv[0]][0]}</span><span><b>${s.mv[1]}</b>${mvBody((s.mv[2]||"")+add)}</span></div>`; return; }
     const navs = ps.map(p=>{ const o=st[p].prev||s.from||null; return [p, o?dir(o,s.q,MODE[st[p].mode||"transit"][1]):""]; });
     const hrefs = [...new Set(navs.map(x=>x[1]))];
