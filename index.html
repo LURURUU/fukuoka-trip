@@ -100,7 +100,10 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .btn:hover{background:var(--soft)}
 .btn.go{background:var(--c);border-color:var(--c);color:#fff}
 .btn.go:hover{filter:brightness(1.06)}
-.move{margin:6px 0 16px 52px;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--sub)}
+.move{margin:6px 0 16px 52px;display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--sub);line-height:1.55}
+.move .mvd{display:block;margin-top:2px}
+.mvl{margin:4px 0 0;padding-left:18px}.mvl>li{margin:3px 0}
+.mvl ol{margin:2px 0;padding-left:20px}.mvl ol li{margin:2px 0}
 .move b{color:var(--ink);font-weight:500}
 .move .ic{font-size:15px;opacity:.85}
 .endnote{margin:0 0 6px 52px;font-size:13px;color:var(--sub)}
@@ -492,8 +495,8 @@ const DAYS = [
 
  { id:"d2", no:"DAY 2", c:"var(--d2)", raw:"#16a085", big:"⛩️", title:"神社 × 卡牌 × 頂級燒肉", date:"10/9（五）・太宰府／櫛田神社 → 天神 → 春吉 → 中洲",
    plans:[["A","A｜太宰府天滿宮","最有名・來回約 2 小時車程・08:45 出門"],["B","B｜櫛田神社＋川端商店街","離住處近・10:00 出門・多睡 1 小時"]],
-   start:["transit","巴士 約 1 小時・一人約 850–900 円（約 NT$170–180）","<b>08:45 出門</b>：① 住處附近搭巴士約 9 分鐘到「博多巴士總站」（一人約 150–210 円（約 NT$30–40），刷 Suica；班次用 Google Maps 查），不想找就搭計程車約 5–7 分鐘、約 1,000 円（約 NT$200），🚕 Uber 目的地：<b>博多バスターミナル（福岡市博多区博多駅中央街2-1）</b> ② 在博多巴士總站 1F 搭直達巴士「<b>旅人（太宰府ライナー）</b>」約 40 分鐘、一人約 700 円（約 NT$140），刷 Suica"],
-   startB:["taxi","計程車 約 10 分鐘・約 1,300–1,500 円（約 NT$270–310）","<b>10:00 出門</b>，住處 → 櫛田神社；🚕 Uber 目的地：<b>櫛田神社（福岡市博多区上川端町1-41）</b>"],
+   start:["transit","巴士 約 1 小時・一人約 850–900 円（約 NT$170–180）","<b>08:45 出門</b>；① 住處附近搭巴士約 9 分鐘到「博多巴士總站」，一人約 150–210 円（約 NT$30–40），刷 Suica，班次用 Google Maps 查；不想找巴士就搭計程車約 5–7 分鐘、約 1,000 円（約 NT$200），🚕 Uber 目的地：<b>博多バスターミナル（福岡市博多区博多駅中央街2-1）</b>；② 博多巴士總站 1F 搭直達巴士「<b>旅人（太宰府ライナー）</b>」約 40 分鐘，一人約 700 円（約 NT$140），刷 Suica"],
+   startB:["taxi","計程車 約 10 分鐘・約 1,300–1,500 円（約 NT$270–310）","<b>10:00 出門</b>；🚕 Uber 目的地：<b>櫛田神社（福岡市博多区上川端町1-41）</b>"],
    stops:[
     {t:"09:45", g:"dazaifu", plan:"A", q:"太宰府天満宮", name:"太宰府天滿宮", img:"dazaifu", from:AIRBNB_Q,
      tags:[["c","神社"]], facts:["⏱ 約 1.5 小時","💴 參拜免費"],
@@ -542,7 +545,7 @@ const DAYS = [
    ], end:"🚶 走路約 4 分鐘回住處"},
 
  { id:"d3", no:"DAY 3", c:"var(--d3)", raw:"#3f6fd8", big:"🃏", title:"卡牌最終戰 × 滿載而歸", date:"10/10（六）・博多站 → 天神 → 運河城 → 博多站 → 機場",
-   start:["taxi","計程車 約 7–10 分鐘・約 1,000–1,200 円（約 NT$200–250）","<b>9:45 左右退房出門</b>（10:00 前要退房）→ 🚕 Uber 目的地：<b>TKPサンライフホテル（福岡市博多区博多駅東1-12-3）</b>"],
+   start:["taxi","計程車 約 7–10 分鐘・約 1,000–1,200 円（約 NT$200–250）","<b>9:45 左右退房出門</b>（10:00 前要退房）；🚕 Uber 目的地：<b>TKPサンライフホテル（福岡市博多区博多駅東1-12-3）</b>"],
    stops:[
     {t:"10:15", g:"tkp", q:"TKPサンライフホテル 博多駅東1-12-3", name:"🧳 寄行李：TKP サンライフホテル（筑紫口）", img:"hakata", sample:"示意圖",
      tags:[["c","寄行李"],["ok","✅ 已訂"]], facts:["⏰ 飯店櫃台 24 小時","💴 包包 500＋行李箱 800＝1,300 円","📍 博多駅東 1-12-3，筑紫口走路 1 分鐘"],
@@ -582,6 +585,10 @@ const dir = (o,d,m) => `https://www.google.com/maps/dir/?api=1&origin=${enc(o)}&
 
 const PLAN={}; DAYS.forEach(D=>{ if(D.plans){ const v=store("fk-plan-"+D.id); PLAN[D.id]=D.plans.some(p=>p[0]===v)?v:D.plans[0][0]; } });
 const vis=(D,s,p)=>!s.plan||s.plan===(p||PLAN[D.id]||"A");
+const mvBody=txt=>{ if(!txt) return ""; const parts=txt.split("；").map(x=>x.trim()).filter(Boolean);
+  const li=x=>{ const st=x.split(/\s*→\s*/); return st.length>=3?`<li><ol>${st.map(y=>`<li>${y}</li>`).join("")}</ol></li>`:`<li>${x}</li>`; };
+  if(parts.length===1 && parts[0].split(/\s*→\s*/).length<3) return `<span class="mvd">${parts[0]}</span>`;
+  return `<ul class="mvl">${parts.map(li).join("")}</ul>`; };
 function renderDay(D){
   const P = D.plans ? D.plans.map(p=>p[0]) : ["A"];
   const pc = p => D.plans ? ` pl pl-${p}` : "";
@@ -598,12 +605,12 @@ function renderDay(D){
   P.forEach(p=>{ const sd=startOf(p); st[p]={prev:null,mode:sd?sd[0]:null}; });
   const multiStart = D.plans && P.some(p=>startOf(p)!==D.start);
   (multiStart ? P : [P[0]]).forEach(p=>{ const sd=startOf(p); if(!sd) return;
-    h += `<div class="move${multiStart?pc(p):""}"><span class="ic">${MODE[sd[0]][0]}</span><span><b>${sd[1]}</b>　${sd[2]}</span></div>`; });
+    h += `<div class="move${multiStart?pc(p):""}"><span class="ic">${MODE[sd[0]][0]}</span><span><b>${sd[1]}</b>${mvBody(sd[2])}</span></div>`; });
   D.stops.forEach(s=>{
     const cls = s.plan ? pc(s.plan) : "";
     const ps = s.plan ? [s.plan] : P;
     if(s.mv){ ps.forEach(p=>st[p].mode=s.mv[0]);
-      h += `<div class="move${cls}"><span class="ic">${MODE[s.mv[0]][0]}</span><span><b>${s.mv[1]}</b>${s.mv[2]?"　"+s.mv[2]:""}</span></div>`; return; }
+      h += `<div class="move${cls}"><span class="ic">${MODE[s.mv[0]][0]}</span><span><b>${s.mv[1]}</b>${mvBody(s.mv[2])}</span></div>`; return; }
     const navs = ps.map(p=>{ const o=st[p].prev||s.from||null; return [p, o?dir(o,s.q,MODE[st[p].mode||"transit"][1]):""]; });
     const hrefs = [...new Set(navs.map(x=>x[1]))];
     const navBtn = hrefs.length===1
